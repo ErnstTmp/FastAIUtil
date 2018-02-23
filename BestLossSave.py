@@ -29,7 +29,7 @@ class BestLossSave(Callback):
     def on_epoch_end(self, vals):
         if self.best_loss > self.loss_sum:
             self.best_loss = self.loss_sum
-            learner.save(self.filename)
+            self.learner.save(self.filename)
             self.save_epoch = self.epoch
             
         self.epoch += 1

@@ -27,7 +27,7 @@ class BestValSave(Callback):
         val = vals[self.valtype] # validation loss: vals[0], metrics: vals[1:]
         if self.best_val > val:
             self.best_val = val
-            learner.save(self.filename)
+            self.learner.save(self.filename)
             self.save_epoch = self.epoch
             
         self.epoch += 1
